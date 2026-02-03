@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manifest - Unlock Your Potential</title>
+    <title>Manifest Lock - Unlock Your Potential</title>
     <meta name="description" content="manifest to unlock your apps. speak it into existence.">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Manifest">
+    <meta property="og:title" content="Manifest Lock">
     <meta property="og:description" content="manifest to unlock your apps. speak it into existence.">
     <meta property="og:type" content="website">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Manifest">
+    <meta name="twitter:title" content="Manifest Lock">
     <meta name="twitter:description" content="manifest to unlock your apps. speak it into existence.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,17 +93,20 @@
         main {
             flex: 1;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
-            text-align: center;
+            padding: 2rem 4rem;
             position: relative;
             z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            gap: 4rem;
         }
 
         .hero {
-            max-width: 600px;
+            flex: 1;
+            max-width: 550px;
             animation: fadeInUp 1s ease-out;
         }
 
@@ -119,50 +122,75 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 0.3em;
-            text-transform: lowercase;
-            margin-bottom: 3rem;
-            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .logo img {
+            width: 120px;
+            height: auto;
         }
 
         .headline {
-            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            font-size: clamp(2rem, 4vw, 3.5rem);
             font-weight: 300;
-            line-height: 1.4;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
             letter-spacing: -0.02em;
         }
 
         .subheadline {
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
             font-weight: 400;
             opacity: 0.85;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             line-height: 1.6;
         }
 
-        .cta-button {
-            display: inline-block;
-            transition: transform 0.3s ease, opacity 0.3s ease;
+        .phone-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.2s both;
         }
 
-        .cta-button:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
+        .phone-container {
+            border-radius: 40px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .phone-container video {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+            border-radius: 40px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: not-allowed;
+            opacity: 0.6;
         }
 
         .cta-button img {
             height: 54px;
             width: auto;
+            filter: grayscale(100%);
         }
 
-        .divider {
-            width: 60px;
-            height: 1px;
-            background: rgba(255, 255, 255, 0.3);
-            margin: 3rem auto;
+        .cta-button .coming-soon {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            opacity: 0.8;
         }
 
         .tagline {
@@ -170,6 +198,7 @@
             font-weight: 400;
             opacity: 0.7;
             letter-spacing: 0.05em;
+            margin-top: 2rem;
         }
 
         footer {
@@ -204,26 +233,50 @@
             opacity: 0.5;
         }
 
-        /* Mobile adjustments */
-        @media (max-width: 480px) {
+        /* Tablet */
+        @media (max-width: 1024px) {
             main {
-                padding: 1.5rem;
+                padding: 2rem;
+                gap: 2rem;
+            }
+
+            .phone-container video {
+                max-width: 340px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+                padding: 2rem 1.5rem;
+                gap: 2.5rem;
+                text-align: center;
+            }
+
+            .hero {
+                order: 1;
             }
 
             .logo {
-                margin-bottom: 2rem;
+                text-align: center;
             }
 
-            .headline {
-                margin-bottom: 1rem;
+            .logo img {
+                width: 100px;
             }
 
-            .subheadline {
-                margin-bottom: 2rem;
+            .phone-section {
+                order: 2;
             }
 
-            .divider {
-                margin: 2rem auto;
+            .phone-container {
+                border-radius: 30px;
+            }
+
+            .phone-container video {
+                max-width: 280px;
+                border-radius: 30px;
             }
 
             .footer-links {
@@ -249,19 +302,28 @@
 
     <main>
         <div class="hero">
-            <div class="logo">manifest</div>
+            <div class="logo">
+                <img src="manifest-lock.png" alt="Manifest Lock">
+            </div>
 
             <h1 class="headline">your phone is taking you away from your goals</h1>
 
             <p class="subheadline">speak it into existence</p>
 
-            <a href="#" class="cta-button" aria-label="Download on the App Store">
+            <div class="cta-button">
                 <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-            </a>
-
-            <div class="divider"></div>
+                <span class="coming-soon">Coming Soon</span>
+            </div>
 
             <p class="tagline">manifest to unlock your apps</p>
+        </div>
+
+        <div class="phone-section">
+            <div class="phone-container">
+                <video autoplay loop muted playsinline>
+                    <source src="manifest_lock_demo_web.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
     </main>
 
@@ -269,9 +331,9 @@
         <nav class="footer-links">
             <a href="terms.html">Terms of Service</a>
             <a href="privacy.html">Privacy Policy</a>
-            <a href="mailto:hello@manifest.app">Contact</a>
+            <a href="mailto:hello@manifestlock.app">Contact</a>
         </nav>
-        <p class="copyright">&copy; 2025 Manifest. All rights reserved.</p>
+        <p class="copyright">&copy; 2025 Manifest Lock. All rights reserved.</p>
     </footer>
 </body>
 </html>
