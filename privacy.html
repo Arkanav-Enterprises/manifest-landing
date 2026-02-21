@@ -11,7 +11,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Manifest</title>
+    <title>Privacy Policy - Manifest Lock</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,6 +68,13 @@
             color: #1a1a1a;
         }
 
+        .app-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+
         .effective-date {
             font-size: 0.875rem;
             color: #666;
@@ -89,6 +96,20 @@
             font-weight: 600;
             margin-bottom: 1rem;
             color: var(--primary);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #333;
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #444;
         }
 
         p {
@@ -120,66 +141,129 @@
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">&larr; Back to Manifest</a>
+        <a href="index.html" class="back-link">&larr; Back to Manifest Lock</a>
 
         <h1>Privacy Policy</h1>
-        <p class="effective-date">Effective Date: January 25, 2025</p>
+        <p class="app-name">Manifest Lock - Affirm &amp; Focus</p>
+        <p class="effective-date">Last Updated: February 21, 2026</p>
 
-        <p class="intro">This Privacy Policy explains how Manifest collects, uses, and protects your information when you use our iOS application. By using Manifest, you acknowledge and agree to this policy.</p>
+        <p class="intro">Manifest Lock ("we," "our," or "the app") is developed by Pranav Ambwani. This Privacy Policy explains how we collect, use, and protect your information when you use Manifest Lock.</p>
 
         <hr>
 
-        <h2>Data Collection</h2>
-        <p>We may automatically collect the following information:</p>
+        <h2>Summary</h2>
+        <p>Manifest Lock is designed with privacy at its core. Your manifestations and affirmations are stored locally on your device and are never uploaded to our servers. The app uses limited third-party services for specific features, each described below. You have full control over which features share data externally.</p>
+
+        <hr>
+
+        <h2>Information We Collect</h2>
+
+        <h3>Information Stored on Your Device</h3>
+        <p>The following data is created and stored locally on your iPhone and never leaves your device unless you explicitly choose to share it:</p>
         <ul>
-            <li>Crash logs and diagnostic data</li>
-            <li>App usage analytics (via Apple Analytics)</li>
-            <li>Device specifications</li>
-            <li>Mood and alignment check-in responses</li>
+            <li>Manifestations and affirmations (text)</li>
+            <li>Mood and alignment selections</li>
+            <li>Streak and progress data</li>
+            <li>App blocking preferences and selected apps</li>
+            <li>Notification and alarm preferences</li>
+            <li>Onboarding preferences (name, age range, goals, practice mode, commitment level)</li>
         </ul>
-        <p>Your manifestations are stored locally on your device and are not transmitted to our servers unless you enable cloud sync.</p>
+        <p>This data is persisted using on-device storage (UserDefaults and local JSON files). If you use iCloud backup, this data may be included in your device backup per your Apple iCloud settings.</p>
 
-        <hr>
+        <h3>Information Shared with Third-Party Services</h3>
 
-        <h2>Data Usage</h2>
-        <p>We use collected data to:</p>
+        <h4>AI-Powered Features (OpenAI)</h4>
+        <p>Manifest Lock offers optional AI-powered features including personalized affirmation suggestions based on your selected goals and mood. <strong>These features require your explicit consent before any data is shared.</strong></p>
         <ul>
-            <li>Monitor app performance</li>
-            <li>Diagnose bugs or crashes</li>
-            <li>Understand user behavior to improve the app</li>
-            <li>Enhance the manifestation experience</li>
+            <li><strong>What is sent</strong>: The text content of your manifestations and your selected goal preferences. No personal identifiers, device information, or metadata are sent.</li>
+            <li><strong>Who receives it</strong>: Your text is sent to our secure server (a Cloudflare Worker), which forwards it to OpenAI's GPT-4o-mini API for processing. The AI-generated result is returned to your device.</li>
+            <li><strong>How it is used</strong>: Solely to generate personalized affirmation suggestions for your manifestation practice. Your text is processed in real-time and is not stored on our server or by OpenAI.</li>
+            <li><strong>Data retention</strong>: OpenAI's API data usage policy states that data sent through the API is not used to train their models and is retained for a maximum of 30 days for abuse monitoring before being deleted. Our Cloudflare Worker does not log or store any user content.</li>
+            <li><strong>Your control</strong>: You are asked for explicit permission before AI features are enabled. You can disable AI features at any time in Settings &rarr; AI Features. When disabled, no manifestation text is sent to any external service.</li>
         </ul>
-        <p>All analytics data is anonymized. We do not sell your data to third parties.</p>
 
-        <hr>
-
-        <h2>Third-Party Services</h2>
-        <p>Manifest may use the following third-party services:</p>
+        <h4>Analytics (PostHog)</h4>
+        <p>We use PostHog to understand how the app is used and to improve your experience.</p>
         <ul>
-            <li><strong>Apple App Store</strong> — for app distribution and payments</li>
-            <li><strong>Apple Analytics</strong> — for anonymized usage metrics</li>
+            <li><strong>What is collected</strong>: Anonymous usage events (e.g., "manifestation created," "practice completed," "paywall viewed"), feature engagement metrics, and app performance data. Events may include non-identifying properties such as word count, streak length, or screen names.</li>
+            <li><strong>What is NOT collected</strong>: Manifestation text, affirmation content, or any personally identifiable information.</li>
+            <li><strong>Identifiers</strong>: PostHog assigns an anonymous ID to your device. We do not link this ID to your name, email, or Apple ID.</li>
+            <li><strong>Your control</strong>: Analytics data cannot currently be opted out of within the app, but all data is anonymous and cannot be used to identify you.</li>
         </ul>
-        <p>No personally identifiable information is stored on external servers.</p>
+
+        <h4>Subscriptions (RevenueCat)</h4>
+        <p>We use RevenueCat to manage in-app subscriptions.</p>
+        <ul>
+            <li><strong>What is shared</strong>: Anonymous purchase receipts and subscription status. RevenueCat assigns an anonymous app user ID.</li>
+            <li><strong>What is NOT shared</strong>: Your name, email, manifestation content, or Apple ID.</li>
+            <li><strong>Purpose</strong>: To verify your subscription status and manage entitlements across app sessions.</li>
+        </ul>
+
+        <h3>Information We Do NOT Collect</h3>
+        <ul>
+            <li>We do not create user accounts or require login</li>
+            <li>We do not collect your name, email address, or contact information (the name you enter during onboarding is stored only on your device)</li>
+            <li>We do not collect location data</li>
+            <li>We do not access your photos, contacts, or other personal data</li>
+            <li>We do not sell, rent, or trade any user data to third parties</li>
+            <li>We do not use data for advertising or ad targeting</li>
+        </ul>
 
         <hr>
 
-        <h2>Privacy Controls</h2>
-        <p>Creating an account is not required to use Manifest. All your manifestations remain private and stored on your device. If you wish to request deletion of any analytics data associated with your device, please contact us.</p>
+        <h2>How We Use Information</h2>
+        <p>All data collection serves one of these purposes:</p>
+        <ul>
+            <li><strong>Providing app functionality</strong>: AI features generate personalized affirmations to enhance your manifestation practice</li>
+            <li><strong>Improving the app</strong>: Anonymous analytics help us understand which features are valuable and identify issues</li>
+            <li><strong>Managing subscriptions</strong>: Purchase verification ensures you receive the features you paid for</li>
+        </ul>
+
+        <hr>
+
+        <h2>Data Security</h2>
+        <ul>
+            <li>All manifestation data is stored locally on your device and protected by your device's passcode, Face ID, or Touch ID</li>
+            <li>Communication with our server (Cloudflare Worker) uses HTTPS encryption in transit</li>
+            <li>Communication between our server and OpenAI uses encrypted API connections</li>
+            <li>We do not maintain a database of user content</li>
+        </ul>
 
         <hr>
 
         <h2>Children's Privacy</h2>
-        <p>Manifest is rated 4+ and does not intentionally collect personal information from children under 13. Parents and guardians are responsible for monitoring their children's use of the app.</p>
+        <p>Manifest Lock is rated 4+ on the App Store. We do not knowingly collect personal information from children under 13. The app does not require account creation or collection of personal identifiers from any user.</p>
 
         <hr>
 
-        <h2>Policy Updates</h2>
-        <p>We may update this Privacy Policy from time to time. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+        <h2>Your Rights</h2>
+        <ul>
+            <li><strong>Access and deletion</strong>: Since manifestation data is stored on your device, you have full control. Delete entries within the app or delete the app to remove all local data.</li>
+            <li><strong>AI consent withdrawal</strong>: Disable AI features at any time in Settings. Previously processed text is not stored by our systems.</li>
+            <li><strong>Analytics</strong>: Contact us to request deletion of anonymous analytics data associated with your device.</li>
+        </ul>
 
         <hr>
 
-        <h2>Contact</h2>
-        <p>For questions or concerns about this Privacy Policy, please contact us at <a href="mailto:hello@manifest.app" class="contact-email">hello@manifest.app</a></p>
+        <h2>Third-Party Service Policies</h2>
+        <ul>
+            <li><strong>OpenAI</strong>: <a href="https://openai.com/policies/privacy-policy">https://openai.com/policies/privacy-policy</a></li>
+            <li><strong>PostHog</strong>: <a href="https://posthog.com/privacy">https://posthog.com/privacy</a></li>
+            <li><strong>RevenueCat</strong>: <a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></li>
+            <li><strong>Cloudflare</strong>: <a href="https://www.cloudflare.com/privacypolicy/">https://www.cloudflare.com/privacypolicy/</a></li>
+        </ul>
+
+        <hr>
+
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be reflected by updating the "Last Updated" date above. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
+
+        <hr>
+
+        <h2>Contact Us</h2>
+        <p>If you have questions about this Privacy Policy or your data, contact us at:</p>
+        <p><strong>Email</strong>: <a href="mailto:support@manifestlock.app" class="contact-email">support@manifestlock.app</a><br>
+        <strong>Website</strong>: <a href="https://manifestlock.app">https://manifestlock.app</a></p>
     </div>
 </body>
 </html>
