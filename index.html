@@ -256,25 +256,18 @@
 
       .cta-button {
         display: inline-flex;
-        flex-direction: column;
         align-items: center;
-        gap: 0.5rem;
-        cursor: not-allowed;
-        opacity: 0.6;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+
+      .cta-button:hover {
+        opacity: 0.85;
       }
 
       .cta-button img {
         height: 54px;
         width: auto;
-        filter: grayscale(100%);
-      }
-
-      .cta-button .coming-soon {
-        font-size: 0.75rem;
-        font-weight: 500;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        opacity: 0.8;
       }
 
       .tagline {
@@ -394,13 +387,12 @@
 
         <p class="subheadline">speak it into existence</p>
 
-        <div class="cta-button">
+        <a class="cta-button" href="https://apps.apple.com/in/app/manifestlock/id6758331593" target="_blank" rel="noopener noreferrer">
           <img
             src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
             alt="Download on the App Store"
           />
-          <span class="coming-soon">Coming Soon</span>
-        </div>
+        </a>
 
         <p class="tagline">manifest to unlock your apps</p>
       </div>
